@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  namenode:
+    image: apache/hadoop:3
+    container_name: namenode
+    hostname: namenode
+    ports:
+      - "9870:9870"
+    volumes:
+      - hadoop_data:/hadoop/dfs/name
+    environment:
+      - SERVICE_PRECONDITION=namenode
+    command: ["sh", "-c", "/usr/local/hadoop/bin/hdfs namenode"]
+
+  datanode1:
+    image: apache/hadoop:3
+    container_name: datanode1
+    hostname: datanode1
+    ports:
+      - "9864:9864"
+    volumes:
+      - hadoop_data:/hadoop/dfs/data
+    environment:
+      - SERVICE_PRECONDITION=datanode
+    command: ["sh", "-c", "/usr/local/hadoop/bin/hdfs datanode"]
+
+  datanode2:
+    image: apache/hadoop:3
+    container_name: datanode2
+    hostname: datanode2
+    ports:
+      - "9865:9864"
+    volumes:
+      - hadoop_data:/hadoop/dfs/data
+    environment:
+      - SERVICE_PRECONDITION=datanode
+    command: ["sh", "-c", "/usr/local/hadoop/bin/hdfs datanode"]
+
+volumes:
+  hadoop_data:
