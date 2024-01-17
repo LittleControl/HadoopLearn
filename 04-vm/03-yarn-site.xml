@@ -33,4 +33,17 @@
     <value>
       JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_HOME,PATH,LANG,TZ</value>
   </property>
+
+  <property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.log.server.url</name>
+    <value>http://arch0:19888/jobhistory/logs</value>
+  </property>
+  <property>
+    <name>yarn.log-aggregation.retain-seconds</name>
+    <value>604800</value>
+  </property>
 </configuration>
