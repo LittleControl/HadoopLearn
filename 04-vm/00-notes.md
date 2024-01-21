@@ -36,3 +36,19 @@ arch2 198.19.249.12/24
 - `mapred --daemon start historyserver`
 - `mapred --daemon stop historyserver`
 - `hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar wordcount /wcinput /wcoutput0`
+
+### stop and start
+
+- sbin/start-dfs.sh | sbin/stop-dfs.sh
+- sbin/start-yarn.sh | sbin/stop-yarn.sh
+- jps | kill -9 id
+- hdfs --daemon start/stop namenode/datanode/secondarynamenode
+- yarn --daemon start/stop resourcemanager/nodemanager
+
+## Usually Port
+
+||||
+
+### hadoop3.x
+
+### hadoop2.x
