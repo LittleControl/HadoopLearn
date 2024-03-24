@@ -17,8 +17,36 @@
     <name>javax.jdo.option.ConnectionPassword</name>
     <value>root</value>
   </property>
+
+  <!-- 默认数据表存储位置 -->
   <property>
     <name>hive.metastore.warehouse.dir</name>
     <value>/user/hive/warehouse</value>
+  </property>
+
+  <!-- Hiveserver2 配置 -->
+  <property>
+    <name>hive.server2.thrift.bind.host</name>
+    <value>arch0</value>
+  </property>
+  <property>
+    <name>hive.server2.thrift.port</name>
+    <value>10000</value>
+  </property>
+
+  <!-- metastore 独立部署配置 -->
+  <property>
+    <name>hive.metastore.uris</name>
+    <value>thrift://arch0:9083</value>
+  </property>
+
+  <!-- Hive客户端配置 运行时显示当前库名和当前字段名 -->
+  <property>
+    <name>hive.cli.print.header</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hive.cli.print.current.db</name>
+    <value>true</value>
   </property>
 </configuration>
