@@ -1,0 +1,12 @@
+[Unit]
+Description=Hive Metastore Service
+After=hadoop.service mariadb.service
+Requires=hadoop.service mariadb.service
+
+[Service]
+Type=simple
+ExecStart=/opt/bin/start-hive-metastore
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Hive Server2 Service
+After=hive-metastore.service
+Requires=hive-metastore.service
+
+[Service]
+Type=simple
+ExecStart=/opt/bin/start-hive-server2
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

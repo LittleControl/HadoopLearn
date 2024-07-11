@@ -8,4 +8,5 @@ echo '======stop hdfs ========='
 ssh root@arch0 "/opt/hadoop-3.3.6/sbin/stop-dfs.sh"
 
 echo '======stop finished======'
-exit 1
+
+exit 0
